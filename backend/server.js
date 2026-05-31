@@ -6,7 +6,7 @@ const cors    = require('cors');
 const app     = express();
 
 // ── Global Middleware ─────────────────────────────────────────
-app.use(cors({ origin: ['http://localhost:3000','http://localhost:5173'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000','http://localhost:5173','https://lems-project.vercel.app'], credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
