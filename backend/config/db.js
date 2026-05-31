@@ -20,7 +20,7 @@ const pool = mysql.createPool({
     console.log('✅  MySQL connected — database: law_enforcement');
     conn.release();
   } catch (err) {
-    console.error('❌  MySQL connection FAILED:', err.message);
+    console.error('❌ MySQL connection FAILED:', err);
     process.exit(1);
   }
 })();
