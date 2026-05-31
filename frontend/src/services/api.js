@@ -8,7 +8,9 @@
 import axios from 'axios'
 
 // Base URL — vite proxy forwards /api → http://localhost:5000/api
-const api = axios.create({ baseURL: '/api' })
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || '/api'
+})
 
 // ── Request interceptor: attach JWT token automatically ───────
 api.interceptors.request.use(config => {
