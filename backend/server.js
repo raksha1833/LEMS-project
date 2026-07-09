@@ -65,6 +65,13 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// TEMPORARY - remove after use
+app.get('/generate-hash', async (req, res) => {
+  const bcrypt = require('bcryptjs')
+  const hash = await bcrypt.hash('password', 10)
+  res.json({ hash })
+})
+
 // ── 404 Handler ───────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).json({
